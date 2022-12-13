@@ -42,7 +42,7 @@ jobs:
 
       - run: ./gradlew :quickjs:jvm:build
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: jvm-native-libraries
           path: quickjs/jvm/src/main/resources/*
@@ -87,13 +87,13 @@ jobs:
 
       - run: ./gradlew assemble javadoc
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: quickjs-jvm.jar
           path: quickjs/jvm/build/libs/*.jar
           if-no-files-found: error
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: quickjs-android.aar
           path: quickjs/android/build/outputs/aar/*-release.aar
